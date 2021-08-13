@@ -26,8 +26,8 @@ if (userPwLength < 8 || userPwLength > 128) {
 var determineLower = confirm("Would you like to use lower case letters?\nOk = Yes\nCancel = No");
 
 if (determineLower == true) {
-   console.log("AHHHHH") 
-} else {console.log("adsf");
+   console.log("lower case yes") 
+} else {console.log("lower case no");
 }
 
 
@@ -35,8 +35,8 @@ if (determineLower == true) {
 var determineUpper = confirm("Would you like to use upper case letters?\nOk = Yes\nCancel = No");
 
 if (determineUpper == true) {
-   console.log("AHHHHH") 
-} else {console.log("adsf");
+   console.log("upper case yes") 
+} else {console.log("upper case no");
 }
 
 
@@ -45,8 +45,8 @@ if (determineUpper == true) {
 var determineNumb = confirm("Would you like to use numbers?\nOk = Yes\nCancel = No");
 
 if (determineNumb == true) {
-   console.log("OHKAY") 
-} else {console.log("duuuude");
+   console.log("number yes") 
+} else {console.log("number no");
 }
 
 
@@ -54,8 +54,8 @@ if (determineNumb == true) {
 var determineSpec = confirm("Would you like to use special characters?\nOk = Yes\nCancel = No");
 
 if (determineSpec == true) {
-   console.log("GAAAHHH") 
-} else {console.log("rrhhheeee");
+   console.log("special yes") 
+} else {console.log("special no");
 }
 
 var password = ""
@@ -69,16 +69,50 @@ determineNumb
 determineSpec
 */
 
+if (determineLower == true){
+   password += Math.random(lowerCaseLetters)
+//   availableChars += lower case string
+   console.log("lower case check")
+} else {console.log("lower case not in use");
+}
+
+if (determineUpper == true){
+   password += Math.random(upperCaseLetters)
+//   availableChars += lower case string
+   console.log("upper case check")
+ } else {console.log("upper case not in use");
+}
+
+if (determineNumb == true){
+   password += Math.random(numbers)
+//   availableChars += lower case string
+   console.log("number check")
+ } else {console.log("number not in use");
+}
+
+ if (determineSpec == true){
+   password += Math.random(specialChar)
+//   availableChars += lower case string
+   console.log("special char check")
+ } else {console.log("special not in use");
+}
+
+
+ function randomFunction(someString){
+    //math floor and math random to generate a random character
+  }
+
+
+
 var length = userPwLength
 
 var result = '';
 
-var charactersLength = characters.length;
+//var charactersLength = characters.length;
 
 for ( var i = 0; i < length; i++ ) {
 
-result += characters.charAt(Math.floor(Math.random() * 
-charactersLength));
+password += Math.random(availableChars);
 
 }
 
