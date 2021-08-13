@@ -32,7 +32,7 @@ if (determineLower == true) {
 
 
 //promt y/n for upper case
-var determineUpper = confirm("Would you like to use lower case letters?\nOk = Yes\nCancel = No");
+var determineUpper = confirm("Would you like to use upper case letters?\nOk = Yes\nCancel = No");
 
 if (determineUpper == true) {
    console.log("AHHHHH") 
@@ -60,7 +60,6 @@ if (determineSpec == true) {
 
 var password = ""
 
-//generate password on screen
 /*
 Collected Variables
 userPwLength
@@ -70,23 +69,29 @@ determineNumb
 determineSpec
 */
 
-  var result = '';
-  var characters = userPwLength;
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-    result += characters.charAt(Math.floor(Math.random() * 
+var length = userPwLength
+
+var result = '';
+
+var charactersLength = characters.length;
+
+for ( var i = 0; i < length; i++ ) {
+
+result += characters.charAt(Math.floor(Math.random() * 
 charactersLength));
- }
- return result;
+
 }
-console.log(makeid(5));
+
+return result;
+
+
+
 
 
 
 return password
-}
 
-
+};
 
 
 // Write password to the #password input
