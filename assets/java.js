@@ -76,38 +76,38 @@ determineSpec
 for ( var i = 0; i < userPwLength; i++ ) {
 
 if (determineLower == true){
-   password += Math.floor(Math.random()*lowerCaseLetters)
+   password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
    availableChars += determineLower
    console.log("lower case in use");
-} else {console.log("lower case not in use");
+ } else {console.log("lower case not in use");
 }
 
 if (determineUpper == true){
-   password += Math.floor(Math.random()*upperCaseLetters)
+   password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
    availableChars += determineUpper
    console.log("upper case in use");
  } else {console.log("upper case not in use");
 }
 
 if (determineNumb == true){
-   password += Math.floor(Math.random()*numbers)
+   password += numbers[Math.floor(Math.random()*numbers.length)]
    availableChars += determineNumb
    console.log("number in use");
  } else {console.log("number not in use");
 }
 
  if (determineSpec == true){
-   password += Math.floor(Math.random()*specialChar)
+   password += specialChar[Math.floor(Math.random()*specialChar.length)];
    availableChars += determineSpec
    console.log("special char in use");
  } else {console.log("special not in use");
 }
 
 
-password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
-password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
-password += numbers[Math.floor(Math.random()*numbers.length)]
-password += specialChar[Math.floor(Math.random()*specialChar.length)];
+//password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
+//password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
+//password += numbers[Math.floor(Math.random()*numbers.length)]
+//password += specialChar[Math.floor(Math.random()*specialChar.length)];
 //password += Math.floor(Math.random()*availableChars); <--original in this place
 }
 
