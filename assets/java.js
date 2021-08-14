@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var pwLength;
-var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//var pwLength; 
+var lowerCaseLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upperCaseLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var numbers = "0123456789";
 var specialChar = "!@#$%^&*.~";
 var availableChars = ""
@@ -42,7 +42,6 @@ if (determineUpper == true) {
 }
 
 
-
 //y/n for numbers
 var determineNumb = confirm("Would you like to use numbers?\nOk = Yes\nCancel = No");
 
@@ -76,42 +75,39 @@ determineSpec
 
 
 if (determineLower == true){
-   password += Math.floor(Math.random(lowerCaseLetters))
+   password += Math.floor(Math.random()*lowerCaseLetters)
    availableChars += determineLower
    console.log("lower case in use");
 } else {console.log("lower case not in use");
 }
 
 if (determineUpper == true){
-   password += Math.floor(Math.random(upperCaseLetters))
+   password += Math.floor(Math.random()*upperCaseLetters)
    availableChars += determineUpper
    console.log("upper case in use");
  } else {console.log("upper case not in use");
 }
 
 if (determineNumb == true){
-   password += Math.floor(Math.random(numbers))
+   password += Math.floor(Math.random()*numbers)
    availableChars += determineNumb
    console.log("number in use");
  } else {console.log("number not in use");
 }
 
  if (determineSpec == true){
-   password += Math.floor(Math.random(specialChar))
+   password += Math.floor(Math.random()*specialChar)
    availableChars += determineSpec
    console.log("special char in use");
  } else {console.log("special not in use");
 }
 
 
-
 //Compiling the password
 
 for ( var i = 0; i < userPwLength; i++ ) {
-
-// subtract how many you are grabbing to make the password lenght correct???
-
-password += Math.floor(Math.random(availableChars));
+//subtract how many you are grabbing to make the password length correct???
+password += Math.floor(Math.random()*availableChars);
 }
 
 return password;
