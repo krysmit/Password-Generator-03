@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 //var pwLength; 
-var lowerCaseLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var upperCaseLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialChar = "!@#$%^&*.~";
 var availableChars = ""
@@ -73,6 +73,7 @@ determineNumb
 determineSpec
 */
 
+for ( var i = 0; i < userPwLength; i++ ) {
 
 if (determineLower == true){
    password += Math.floor(Math.random()*lowerCaseLetters)
@@ -103,11 +104,11 @@ if (determineNumb == true){
 }
 
 
-//Compiling the password
-
-for ( var i = 0; i < userPwLength; i++ ) {
-//subtract how many you are grabbing to make the password length correct???
-password += Math.floor(Math.random()*availableChars);
+password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
+password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
+password += numbers[Math.floor(Math.random()*numbers.length)]
+password += specialChar[Math.floor(Math.random()*specialChar.length)];
+//password += Math.floor(Math.random()*availableChars); <--original in this place
 }
 
 return password;
