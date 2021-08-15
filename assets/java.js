@@ -25,6 +25,7 @@ if (userPwLength < 8 || userPwLength > 128) {
 var determineLower = confirm("Would you like to use lower case letters?\nOk = Yes\nCancel = No");
 
 if (determineLower == true) {
+   availableChars += lowerCaseLetters
    console.log("lower case yes") 
 } else {console.log("lower case no");
 }
@@ -34,6 +35,7 @@ if (determineLower == true) {
 var determineUpper = confirm("Would you like to use upper case letters?\nOk = Yes\nCancel = No");
 
 if (determineUpper == true) {
+   availableChars += upperCaseLetters
    console.log("upper case yes") 
 } else {console.log("upper case no");
 }
@@ -43,6 +45,7 @@ if (determineUpper == true) {
 var determineNumb = confirm("Would you like to use numbers?\nOk = Yes\nCancel = No");
 
 if (determineNumb == true) {
+   availableChars += numbers
    console.log("number yes") 
 } else {console.log("number no");
 }
@@ -52,6 +55,7 @@ if (determineNumb == true) {
 var determineSpec = confirm("Would you like to use special characters?\nOk = Yes\nCancel = No");
 
 if (determineSpec == true) {
+   availableChars += specialChar
    console.log("special yes") 
 } else {console.log("special no");
 }
@@ -63,11 +67,11 @@ var password = ""
 
 //for loop to compile all answers
 //some parts are commented out while I experiment to get the code correct
-for ( var i = 0; i < userPwLength; i++ ) {
+for ( var i = 0; i < userPwLength.length; i++ ) {
 
 if (determineLower == true){
 //  password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
-   availableChars += lowerCaseLetters
+//   availableChars += lowerCaseLetters
 //   password.length = userPwLength
    console.log("lower case in use");
  } else {console.log("lower case not in use");
@@ -75,7 +79,7 @@ if (determineLower == true){
 
 if (determineUpper == true){
  //  password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
-   availableChars += upperCaseLetters
+ //  availableChars += upperCaseLetters
  //  password.length = userPwLength
    console.log("upper case in use");
  } else {console.log("upper case not in use");
@@ -83,7 +87,7 @@ if (determineUpper == true){
 
 if (determineNumb == true){
 //   password += numbers[Math.floor(Math.random()*numbers.length)]
-   availableChars += numbers
+//   availableChars += numbers
 //   password.length = userPwLength
    console.log("number in use");
  } else {console.log("number not in use");
@@ -91,7 +95,7 @@ if (determineNumb == true){
 
  if (determineSpec == true){
   // password += specialChar[Math.floor(Math.random()*specialChar.length)];
-   availableChars += specialChar
+  // availableChars += specialChar
  //  password.length = userPwLength
    console.log("special char in use");
  } else {console.log("special not in use");
@@ -99,7 +103,7 @@ if (determineNumb == true){
 
 //trying to get the password to only be as long as the user asked it to be
 //password.length = userPwLength
-password += availableChars[Math.floor(Math.random()*userPwLenth.length)]
+password += availableChars[Math.floor(Math.random()*userPwLength.length)]
 
 }
 
