@@ -1,6 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-//var pwLength; 
+var generateBtn = document.querySelector("#generate"); 
 var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
@@ -59,45 +58,48 @@ if (determineSpec == true) {
 
 
 
-//Compiling answers into a password
+//Compiling answers into a password variable
 var password = ""
 
 //for loop to compile all answers
+//some parts are commented out while I experiment to get the code correct
 for ( var i = 0; i < userPwLength; i++ ) {
 
 if (determineLower == true){
-   password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
-   availableChars += determineLower
-   password.length = userPwLength
+//  password += lowerCaseLetters[Math.floor(Math.random()*lowerCaseLetters.length)];
+   availableChars += lowerCaseLetters
+//   password.length = userPwLength
    console.log("lower case in use");
  } else {console.log("lower case not in use");
 }
 
 if (determineUpper == true){
-   password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
-   //availableChars += determineUpper - is this doing anything?
-   password.length = userPwLength
+ //  password += upperCaseLetters[Math.floor(Math.random()*upperCaseLetters.length)];
+   availableChars += upperCaseLetters
+ //  password.length = userPwLength
    console.log("upper case in use");
  } else {console.log("upper case not in use");
 }
 
 if (determineNumb == true){
-   password += numbers[Math.floor(Math.random()*numbers.length)]
-   //availableChars += determineNumb - is this doing anything?
-   password.length = userPwLength
+//   password += numbers[Math.floor(Math.random()*numbers.length)]
+   availableChars += numbers
+//   password.length = userPwLength
    console.log("number in use");
  } else {console.log("number not in use");
 }
 
  if (determineSpec == true){
-   password += specialChar[Math.floor(Math.random()*specialChar.length)];
-   //availableChars += determineSpec - is this doing anything?
-   password.length = userPwLength
+  // password += specialChar[Math.floor(Math.random()*specialChar.length)];
+   availableChars += specialChar
+ //  password.length = userPwLength
    console.log("special char in use");
  } else {console.log("special not in use");
 }
 
-
+//trying to get the password to only be as long as the user asked it to be
+//password.length = userPwLength
+password += availableChars[Math.floor(Math.random()*userPwLenth.length)]
 
 }
 
