@@ -66,38 +66,42 @@ if (determineSpec == true) {
 var password = ""
 
 //for loop to compile all answers
-//some parts are commented out while I experiment to get the code correct
 for ( var i = 0; i < userPwLength; i++ ) {
+  password += availableChars[Math.floor(Math.random()*(availableChars.length -1))]
+  // password += availableChars[Math.floor(Math.random()*userPwLength)]
+}
 
-   
-if (determineLower == true){
+{
+   if (determineLower == true){
    console.log(availableChars);
  } else {console.log("lower case not in use");
 }
 
 if (determineUpper == true){
-   console.log("upper case in use");
+   console.log(availableChars);
  } else {console.log("upper case not in use");
 }
 
 if (determineNumb == true){
-   console.log("number in use");
+   console.log(availableChars);
  } else {console.log("number not in use");
 }
 
  if (determineSpec == true){
-   console.log("special char in use");
+   console.log(availableChars);
  } else {console.log("special not in use");
-}
-
-//trying to get the password to only be as long as the user asked it to be
-password += availableChars[Math.floor(Math.random()*userPwLength.length)]
 
 }
 
-return password;   
 
-};
+
+return password
+  
+
+}
+
+
+}
 
 
 // Write password to the #password input
